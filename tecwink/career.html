@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us - Tecwink</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+        body:hover {
+            background-color: #f4f4f4;
+        }
+        header, nav, footer {
+    animation: fadeIn 1s ease-in-out;
+}
+nav {
+    animation: slideInFromTop 1s ease-in-out;
+    transition: background-color 0.3s ease;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    margin: 0 0.5rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+nav a:hover {
+    background-color: #444;
+    border-radius: 5px;
+    transform: scale(1.1);
+}
+.container, .section {
+    animation: fadeInUp 1.5s ease-in-out;
+}
+button, .contact-form input, .contact-form textarea {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+button:hover, .contact-form input:focus, .contact-form textarea:focus {
+    background-color: #fffdfd;
+    transform: scale(1.05);
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInFromTop {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+
+        /* Header and Navigation */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(to right, #ffffff, #f8f8f8);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .logo img {
+            max-height: 50px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            transform: scale(1.05);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 2rem;
+            text-align: justify;
+        }
+
+        .container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .container h2 {
+            font-size: 1.8rem;
+            margin-top: 2rem;
+        }
+
+        .container p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+        footer {
+            background-color: linear-gradient(to right, #c4c4c4, #f8f8f8);
+            color: black;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+        .section {
+            margin-bottom: 2rem;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+        .section h2 {
+            color: #000;
+            margin-bottom: 0.5rem;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-form label {
+            margin-top: 1rem;
+        }
+        .contact-form input, .contact-form textarea {
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            transition: box-shadow 0.3s ease;
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            box-shadow: 0 0 5px rgb(255, 255, 255);
+        }
+        .contact-form button {
+            margin-top: 1rem;
+            padding: 0.7rem;
+            background-color: #000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .contact-form button:hover {
+            background-color:linear-gradient(to right, #c4c4c4, #f8f8f8);
+        }
+        .job-listing {
+            margin-top: 1rem;
+        }
+        .job-listing p {
+            margin: 0.5rem 0;
+        }
+        .job-listing button {
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            background-color: #000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .job-listing button:hover {
+            background-color: #444;
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInFromTop {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+    <script>
+        function applyForJob(role) {
+            const companyEmail = "info@tecwink.com";
+            const subject = encodeURIComponent(`Application for ${role}`);
+            const body = encodeURIComponent("Dear Tecwink Team,\n\nI am interested in the position of " + role + ". Please find my resume attached.\n\nBest regards,\n[Your Name]\n");
+            window.location.href = `mailto:${companyEmail}?subject=${subject}&body=${body}`;
+        }
+        function sendmessage() {
+            const companyEmail = "sales@tecwink.com";
+            const subject = encodeURIComponent(`Sale Enquire`);
+            const body = encodeURIComponent(`I'm interested`);
+            window.location.href = `mailto:${companyEmail}?subject=${subject}&body=${body}`;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Tecwink Logo">
+        </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="product.html">Product</a>
+        <a href="services.html">Services</a>
+        <a href="oracle.html">Oracle Cloud Solutions</a>
+        <a href="career.html">Contact Us</a>
+    </nav>
+</header>
+    <div class="container">
+        <div class="section">
+            <h2>Contact Us</h2>
+            <p>Have questions or need assistance? We're here to help. Reach out to us through the form below or give us a call 08951384852.</p>
+            <form class="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                <!-- <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required> -->
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+
+                <button onclick="sendmessage()">Send Message</button>
+            </form>
+        </div>
+
+        <div class="section">
+            <h2>Career Opportunities</h2>
+            <p>Join our team of innovators! Check out our current openings below:</p>
+            <div class="job-listing">
+                <h3>Programmers with SQL</h3>
+                <p>Location: Work from Office</p>
+                <p>We are looking for freshers with a strong foundation in SQL and JavaScript, and knowledge of PL/SQL is an added advantage, to join our team at Oracle, where you will contribute to innovative solutions with logical problem-solving and a keen eye for detail.</p>
+                <button onclick="applyForJob('Software Developer')">Apply Now</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Tecwink. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
